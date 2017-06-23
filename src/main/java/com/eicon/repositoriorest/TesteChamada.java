@@ -5,10 +5,12 @@
  */
 package com.eicon.repositoriorest;
 
+import com.eicon.repositoriorest.model.RetornoModel;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -18,15 +20,19 @@ import javax.ws.rs.Produces;
 public class TesteChamada {
 
     @GET
-    @Produces("application/xml")
-    public String teste() {
-        String result = "@Produces(\"application/xml\") Output: \n\nC to F Converter Output: \n\n";
-        return "<ctofservice>" + "<celsius>" + "teste" + "</celsius>" + "<ctofoutput>" + result + "</ctofoutput>" + "</ctofservice>";
+    @Produces({MediaType.APPLICATION_JSON})
+    public RetornoModel teste() {
+        System.out.println("teste");
+        RetornoModel retorno = new RetornoModel();
+        retorno.setRetorno("teste");
+        
+        
+        return retorno;
     }
 
     @Path("{c}")
     @GET
-    @Produces("application/xml")
+    @Produces({MediaType.APPLICATION_JSON})
     public String testeParametro(@PathParam("c") String c) {
 
         return c + "teste com parametro";

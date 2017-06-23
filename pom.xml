@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-bundle</artifactId>
-            <version>1.19</version>
+            <version>1.19.4</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
@@ -46,8 +46,16 @@
             <artifactId>jersey-core</artifactId>
             <version>1.19</version>
         </dependency>
-        
-        
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.owlike</groupId>
+            <artifactId>genson</artifactId>
+            <version>0.99</version>
+        </dependency>
     </dependencies>
 
     <build>
