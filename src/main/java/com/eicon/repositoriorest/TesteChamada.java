@@ -5,6 +5,8 @@
  */
 package com.eicon.repositoriorest;
 
+import br.com.giex.api.RetrieveMongo;
+import com.eicon.repositoriorest.model.RetornoByteModel;
 import com.eicon.repositoriorest.model.RetornoModel;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -22,19 +24,24 @@ public class TesteChamada {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public RetornoModel teste() {
-        System.out.println("teste");
+
         RetornoModel retorno = new RetornoModel();
-        retorno.setRetorno("teste");
-        
         
         return retorno;
     }
 
-    @Path("{c}")
+    @Path("{objectID}")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public String testeParametro(@PathParam("c") String c) {
+    public RetornoByteModel testeParametro(@PathParam("objectID") String objectID) {
 
-        return c + "teste com parametro";
+        RetrieveMongo retrive = new RetrieveMongo();
+        
+        byte[] b = retrive.retrieveByte(objectID, "giex_arquivos", "arquivos", "", "");
+        
+        RetornoByteModel retorno = new RetornoByteModel();
+        retorno.setRetorno(b);
+        
+        return retorno;
     }
 }

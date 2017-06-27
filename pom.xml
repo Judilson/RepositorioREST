@@ -14,6 +14,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -56,6 +63,15 @@
             <artifactId>genson</artifactId>
             <version>0.99</version>
         </dependency>
+        
+        
+	<dependency>
+	    <groupId>com.github.Judilson</groupId>
+	    <artifactId>mongoAPI</artifactId>
+	    <version>52450e1781</version>
+	</dependency>
+        
+        
     </dependencies>
 
     <build>
